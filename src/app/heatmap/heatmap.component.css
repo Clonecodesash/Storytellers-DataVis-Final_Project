@@ -1,0 +1,8 @@
+.chart-container {
+    width: 100%;
+    height: auto;
+}
+
+.heatmap-year-selector .heatmap-range-selector {
+    margin-bottom: 15px;
+}
