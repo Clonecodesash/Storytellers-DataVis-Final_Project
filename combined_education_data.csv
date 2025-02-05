@@ -1,4 +1,17 @@
 Country,Year,Percentage,Type
+United Kingdom,2023,:,Male
+Türkiye,2023,75.4,Male
+Switzerland,2023,86.6,Male
+Sweden,2023,86.3,Male
+Spain,2023,75.8,Male
+Slovenia,2023,88.7,Male
+Slovakia,2023,90.7,Male
+Serbia,2023,94.1,Male
+Romania,2023,81.8,Male
+Portugal,2023,84.2,Male
+Poland,2023,90.8,Male
+Norway,2023,78.1,Male
+North Macedonia,2023,:,Male
 Netherlands,2023,84.5,Male
 Montenegro,2023,:,Male
 Malta,2023,82.9,Male
@@ -20,8 +33,19 @@ Cyprus,2023,88.1,Male
 Croatia,2023,96.5,Male
 Bulgaria,2023,89,Male
 Bosnia and Herzegovina,2023,91.2,Male
-Belgium,2023,85.2,Male
-Austria,2023,82.9,Male
+United Kingdom,2022,:,Male
+Türkiye,2022,72,Male
+Switzerland,2022,87.5,Male
+Sweden,2022,82,Male
+Spain,2022,75.4,Male
+Slovenia,2022,94.1,Male
+Slovakia,2022,90.1,Male
+Serbia,2022,93.1,Male
+Romania,2022,81.7,Male
+Portugal,2022,85,Male
+Poland,2022,88.6,Male
+Norway,2022,74.7,Male
+North Macedonia,2022,:,Male
 Netherlands,2022,84.9,Male
 Montenegro,2022,:,Male
 Malta,2022,85.2,Male
@@ -43,8 +67,19 @@ Cyprus,2022,89,Male
 Croatia,2022,96.5,Male
 Bulgaria,2022,89.5,Male
 Bosnia and Herzegovina,2022,93.3,Male
-Belgium,2022,86.2,Male
-Austria,2022,82.8,Male
+United Kingdom,2021,:,Male
+Türkiye,2021,68.7,Male
+Switzerland,2021,88.3,Male
+Sweden,2021,79.8,Male
+Spain,2021,74.5,Male
+Slovenia,2021,92.1,Male
+Slovakia,2021,89.3,Male
+Serbia,2021,90.7,Male
+Romania,2021,84,Male
+Portugal,2021,85.4,Male
+Poland,2021,88.3,Male
+Norway,2021,74.5,Male
+North Macedonia,2021,:,Male
 Netherlands,2021,85,Male
 Montenegro,2021,:,Male
 Malta,2021,86.2,Male
@@ -66,8 +101,19 @@ Cyprus,2021,87.6,Male
 Croatia,2021,96,Male
 Bulgaria,2021,87.4,Male
 Bosnia and Herzegovina,2021,93.2,Male
-Belgium,2021,85.4,Male
-Austria,2021,83.1,Male
+United Kingdom,2020,:,Male
+Türkiye,2020,63.3,Male
+Switzerland,2020,86.3,Male
+Sweden,2020,80.1,Male
+Spain,2020,70.2,Male
+Slovenia,2020,91.7,Male
+Slovakia,2020,90.1,Male
+Serbia,2020,94,Male
+Romania,2020,84.3,Male
+Portugal,2020,79.5,Male
+Poland,2020,88.1,Male
+Norway,2020,77.7,Male
+North Macedonia,2020,94.1,Male
 Netherlands,2020,80.1,Male
 Montenegro,2020,96.1,Male
 Malta,2020,82.5,Male
@@ -89,8 +135,19 @@ Cyprus,2020,86.2,Male
 Croatia,2020,96.9,Male
 Bulgaria,2020,84.6,Male
 Bosnia and Herzegovina,2020,:,Male
-Belgium,2020,82.3,Male
-Austria,2020,82.6,Male
+United Kingdom,2019,84,Male
+Türkiye,2019,60.5,Male
+Switzerland,2019,87.1,Male
+Sweden,2019,81.4,Male
+Spain,2019,68.5,Male
+Slovenia,2019,91.5,Male
+Slovakia,2019,89.9,Male
+Serbia,2019,92.7,Male
+Romania,2019,83.8,Male
+Portugal,2019,78.9,Male
+Poland,2019,88.7,Male
+Norway,2019,77.2,Male
+North Macedonia,2019,93.6,Male
 Netherlands,2019,78.9,Male
 Montenegro,2019,95.1,Male
 Malta,2019,81.3,Male
@@ -112,8 +169,19 @@ Cyprus,2019,91.9,Male
 Croatia,2019,97.5,Male
 Bulgaria,2019,83.4,Male
 Bosnia and Herzegovina,2019,:,Male
-Belgium,2019,82.4,Male
-Austria,2019,84.4,Male
+United Kingdom,2018,83.6,Male
+Türkiye,2018,58.2,Male
+Switzerland,2018,85.9,Male
+Sweden,2018,83.3,Male
+Spain,2018,67.7,Male
+Slovenia,2018,89.5,Male
+Slovakia,2018,89.7,Male
+Serbia,2018,92.3,Male
+Romania,2018,81.6,Male
+Portugal,2018,77,Male
+Poland,2018,89.6,Male
+Norway,2018,74.8,Male
+North Macedonia,2018,93.5,Male
 Netherlands,2018,79.4,Male
 Montenegro,2018,96.4,Male
 Malta,2018,82.4,Male
@@ -135,8 +203,19 @@ Cyprus,2018,90.1,Male
 Croatia,2018,96.6,Male
 Bulgaria,2018,85.6,Male
 Bosnia and Herzegovina,2018,:,Male
-Belgium,2018,81.7,Male
-Austria,2018,85.7,Male
+United Kingdom,2017,83.4,Male
+Türkiye,2017,57.1,Male
+Switzerland,2017,87.7,Male
+Sweden,2017,85.3,Male
+Spain,2017,66.4,Male
+Slovenia,2017,88.9,Male
+Slovakia,2017,90,Male
+Serbia,2017,92.7,Male
+Romania,2017,80,Male
+Portugal,2017,73.8,Male
+Poland,2017,88.6,Male
+Norway,2017,74,Male
+North Macedonia,2017,91.1,Male
 Netherlands,2017,77.7,Male
 Montenegro,2017,95.1,Male
 Malta,2017,79.8,Male
@@ -158,8 +237,18 @@ Cyprus,2017,87.8,Male
 Croatia,2017,96.1,Male
 Bulgaria,2017,85.8,Male
 Bosnia and Herzegovina,2017,:,Male
-Belgium,2017,82.9,Male
-Austria,2017,84.7,Male
+United Kingdom,2023,:,Female
+Türkiye,2023,77.6,Female
+Switzerland,2023,89.5,Female
+Sweden,2023,89.8,Female
+Spain,2023,82.4,Female
+Slovenia,2023,92.5,Female
+Slovakia,2023,90.5,Female
+Serbia,2023,93.3,Female
+Romania,2023,80.9,Female
+Portugal,2023,90.2,Female
+Poland,2023,95.3,Female
+Norway,2023,85.1,Female
 North Macedonia,2023,:,Female
 Netherlands,2023,88.7,Female
 Montenegro,2023,:,Female
@@ -183,6 +272,18 @@ Croatia,2023,98.3,Female
 Bulgaria,2023,88.2,Female
 Bosnia and Herzegovina,2023,92.5,Female
 Belgium,2023,91.6,Female
+United Kingdom,2022,:,Female
+Türkiye,2022,75.7,Female
+Switzerland,2022,90.3,Female
+Sweden,2022,86.6,Female
+Spain,2022,82.1,Female
+Slovenia,2022,95.5,Female
+Slovakia,2022,91.3,Female
+Serbia,2022,93.9,Female
+Romania,2022,82.9,Female
+Portugal,2022,92.4,Female
+Poland,2022,92.9,Female
+Norway,2022,82.8,Female
 North Macedonia,2022,:,Female
 Netherlands,2022,89.9,Female
 Montenegro,2022,:,Female
@@ -206,6 +307,18 @@ Croatia,2022,98.1,Female
 Bulgaria,2022,87,Female
 Bosnia and Herzegovina,2022,93.2,Female
 Belgium,2022,90.2,Female
+United Kingdom,2021,:,Female
+Türkiye,2021,72.7,Female
+Switzerland,2021,90.2,Female
+Sweden,2021,86.7,Female
+Spain,2021,83.5,Female
+Slovenia,2021,96.7,Female
+Slovakia,2021,89.3,Female
+Serbia,2021,92.7,Female
+Romania,2021,82.6,Female
+Portugal,2021,92.2,Female
+Poland,2021,93.3,Female
+Norway,2021,83.4,Female
 North Macedonia,2021,:,Female
 Netherlands,2021,90,Female
 Montenegro,2021,:,Female
@@ -229,6 +342,18 @@ Croatia,2021,97.8,Female
 Bulgaria,2021,85.5,Female
 Bosnia and Herzegovina,2021,94.7,Female
 Belgium,2021,91.2,Female
+United Kingdom,2020,:,Female
+Türkiye,2020,67.8,Female
+Switzerland,2020,91.5,Female
+Sweden,2020,86.4,Female
+Spain,2020,81.9,Female
+Slovenia,2020,94,Female
+Slovakia,2020,89.2,Female
+Serbia,2020,93.2,Female
+Romania,2020,81.7,Female
+Portugal,2020,90.5,Female
+Poland,2020,92.1,Female
+Norway,2020,83.9,Female
 North Macedonia,2020,93.8,Female
 Netherlands,2020,86.2,Female
 Montenegro,2020,96.2,Female
@@ -252,6 +377,18 @@ Croatia,2020,97.6,Female
 Bulgaria,2020,86.2,Female
 Bosnia and Herzegovina,2020,:,Female
 Belgium,2020,89.1,Female
+United Kingdom,2019,88,Female
+Türkiye,2019,63.4,Female
+Switzerland,2019,91.4,Female
+Sweden,2019,88.1,Female
+Spain,2019,79.7,Female
+Slovenia,2019,93.5,Female
+Slovakia,2019,89.9,Female
+Serbia,2019,92.4,Female
+Romania,2019,83,Female
+Portugal,2019,87.4,Female
+Poland,2019,93.3,Female
+Norway,2019,84.6,Female
 North Macedonia,2019,90.1,Female
 Netherlands,2019,85.6,Female
 Montenegro,2019,95.3,Female
@@ -275,6 +412,18 @@ Croatia,2019,97.1,Female
 Bulgaria,2019,85.5,Female
 Bosnia and Herzegovina,2019,:,Female
 Belgium,2019,88.8,Female
+United Kingdom,2018,88.2,Female
+Türkiye,2018,59.1,Female
+Switzerland,2018,90.1,Female
+Sweden,2018,87.4,Female
+Spain,2018,77.9,Female
+Slovenia,2018,93.7,Female
+Slovakia,2018,89.1,Female
+Serbia,2018,92.7,Female
+Romania,2018,81.7,Female
+Portugal,2018,85.2,Female
+Poland,2018,92.8,Female
+Norway,2018,85.7,Female
 North Macedonia,2018,90.3,Female
 Netherlands,2018,85.6,Female
 Montenegro,2018,95.8,Female
@@ -298,6 +447,18 @@ Croatia,2018,96,Female
 Bulgaria,2018,86.3,Female
 Bosnia and Herzegovina,2018,:,Female
 Belgium,2018,87.9,Female
+United Kingdom,2017,87.8,Female
+Türkiye,2017,57.3,Female
+Switzerland,2017,90.2,Female
+Sweden,2017,86,Female
+Spain,2017,77.2,Female
+Slovenia,2017,93.8,Female
+Slovakia,2017,87.6,Female
+Serbia,2017,93.7,Female
+Romania,2017,79.5,Female
+Portugal,2017,83.4,Female
+Poland,2017,92.6,Female
+Norway,2017,82.5,Female
 North Macedonia,2017,90.2,Female
 Netherlands,2017,86.1,Female
 Montenegro,2017,95.1,Female
@@ -321,6 +482,18 @@ Croatia,2017,96.9,Female
 Bulgaria,2017,85.8,Female
 Bosnia and Herzegovina,2017,:,Female
 Belgium,2017,88.5,Female
+United Kingdom,2023,:,Total
+Türkiye,2023,76.5,Total
+Switzerland,2023,88,Total
+Sweden,2023,87.9,Total
+Spain,2023,79,Total
+Slovenia,2023,90.4,Total
+Slovakia,2023,90.6,Total
+Serbia,2023,93.7,Total
+Romania,2023,81.3,Total
+Portugal,2023,87.1,Total
+Poland,2023,93,Total
+Norway,2023,81.5,Total
 North Macedonia,2023,:,Total
 Netherlands,2023,86.6,Total
 Montenegro,2023,:,Total
@@ -344,6 +517,18 @@ Croatia,2023,97.3,Total
 Bulgaria,2023,88.6,Total
 Bosnia and Herzegovina,2023,91.9,Total
 Belgium,2023,88.4,Total
+United Kingdom,2022,:,Total
+Türkiye,2022,73.8,Total
+Switzerland,2022,88.9,Total
+Sweden,2022,84.2,Total
+Spain,2022,78.6,Total
+Slovenia,2022,94.7,Total
+Slovakia,2022,90.7,Total
+Serbia,2022,93.5,Total
+Romania,2022,82.3,Total
+Portugal,2022,88.6,Total
+Poland,2022,90.7,Total
+Norway,2022,78.6,Total
 North Macedonia,2022,:,Total
 Netherlands,2022,87.4,Total
 Montenegro,2022,:,Total
@@ -367,6 +552,18 @@ Croatia,2022,97.3,Total
 Bulgaria,2022,88.3,Total
 Bosnia and Herzegovina,2022,93.2,Total
 Belgium,2022,88.2,Total
+United Kingdom,2021,:,Total
+Türkiye,2021,70.7,Total
+Switzerland,2021,89.2,Total
+Sweden,2021,83.1,Total
+Spain,2021,78.9,Total
+Slovenia,2021,94.2,Total
+Slovakia,2021,89.3,Total
+Serbia,2021,91.7,Total
+Romania,2021,83.3,Total
+Portugal,2021,88.6,Total
+Poland,2021,90.7,Total
+Norway,2021,78.9,Total
 North Macedonia,2021,:,Total
 Netherlands,2021,87.5,Total
 Montenegro,2021,:,Total
@@ -390,6 +587,18 @@ Croatia,2021,96.9,Total
 Bulgaria,2021,86.5,Total
 Bosnia and Herzegovina,2021,93.9,Total
 Belgium,2021,88.2,Total
+United Kingdom,2020,:,Total
+Türkiye,2020,65.6,Total
+Switzerland,2020,88.8,Total
+Sweden,2020,83.1,Total
+Spain,2020,75.9,Total
+Slovenia,2020,92.8,Total
+Slovakia,2020,89.7,Total
+Serbia,2020,93.6,Total
+Romania,2020,83,Total
+Portugal,2020,84.9,Total
+Poland,2020,90.1,Total
+Norway,2020,80.7,Total
 North Macedonia,2020,93.9,Total
 Netherlands,2020,83.1,Total
 Montenegro,2020,96.1,Total
@@ -413,6 +622,18 @@ Croatia,2020,97.2,Total
 Bulgaria,2020,85.4,Total
 Bosnia and Herzegovina,2020,:,Total
 Belgium,2020,85.7,Total
+United Kingdom,2019,85.9,Total
+Türkiye,2019,62,Total
+Switzerland,2019,89.3,Total
+Sweden,2019,84.6,Total
+Spain,2019,74,Total
+Slovenia,2019,92.4,Total
+Slovakia,2019,89.9,Total
+Serbia,2019,92.5,Total
+Romania,2019,83.4,Total
+Portugal,2019,83.1,Total
+Poland,2019,90.9,Total
+Norway,2019,80.8,Total
 North Macedonia,2019,91.9,Total
 Netherlands,2019,82.2,Total
 Montenegro,2019,95.2,Total
@@ -436,6 +657,18 @@ Croatia,2019,97.3,Total
 Bulgaria,2019,84.4,Total
 Bosnia and Herzegovina,2019,:,Total
 Belgium,2019,85.6,Total
+United Kingdom,2018,85.9,Total
+Türkiye,2018,58.6,Total
+Switzerland,2018,87.9,Total
+Sweden,2018,85.3,Total
+Spain,2018,72.7,Total
+Slovenia,2018,91.5,Total
+Slovakia,2018,89.4,Total
+Serbia,2018,92.5,Total
+Romania,2018,81.7,Total
+Portugal,2018,81.1,Total
+Poland,2018,91.2,Total
+Norway,2018,80.1,Total
 North Macedonia,2018,91.9,Total
 Netherlands,2018,82.5,Total
 Montenegro,2018,96.1,Total
@@ -459,6 +692,18 @@ Croatia,2018,96.3,Total
 Bulgaria,2018,86,Total
 Bosnia and Herzegovina,2018,:,Total
 Belgium,2018,84.8,Total
+United Kingdom,2017,85.6,Total
+Türkiye,2017,57.2,Total
+Switzerland,2017,88.9,Total
+Sweden,2017,85.6,Total
+Spain,2017,71.7,Total
+Slovenia,2017,91.2,Total
+Slovakia,2017,88.9,Total
+Serbia,2017,93.2,Total
+Romania,2017,79.8,Total
+Portugal,2017,78.5,Total
+Poland,2017,90.6,Total
+Norway,2017,78.2,Total
 North Macedonia,2017,90.7,Total
 Netherlands,2017,81.9,Total
 Montenegro,2017,95.1,Total
