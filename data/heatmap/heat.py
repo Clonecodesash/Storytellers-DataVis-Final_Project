@@ -37,3 +37,4 @@ print(combined_df)
 
 # Save the combined dataframe to a CSV file
 combined_df.to_csv("combined_heatmap_employment_data.csv", index=False)
+
