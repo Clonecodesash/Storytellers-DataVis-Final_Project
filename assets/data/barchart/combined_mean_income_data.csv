@@ -26,14 +26,14 @@ Slovenia,2023,15487,Level 0-2
 Slovakia,2023,6585,Level 0-2
 Finland,2023,29246,Level 0-2
 Sweden,2023,23571,Level 0-2
-Iceland,2023,:,Level 0-2
+Iceland,2023,,Level 0-2
 Norway,2023,40909,Level 0-2
 Switzerland,2023,44282,Level 0-2
-United Kingdom,2023,:,Level 0-2
-Montenegro,2023,:,Level 0-2
-North Macedonia,2023,:,Level 0-2
-Albania,2023,:,Level 0-2
-Serbia,2023,:,Level 0-2
+United Kingdom,2023,,Level 0-2
+Montenegro,2023,,Level 0-2
+North Macedonia,2023,,Level 0-2
+Albania,2023,,Level 0-2
+Serbia,2023,,Level 0-2
 Türkiye,2023,3402,Level 0-2
 Belgium,2022,21914,Level 0-2
 Bulgaria,2022,3561,Level 0-2
@@ -62,13 +62,13 @@ Slovenia,2022,14514,Level 0-2
 Slovakia,2022,6301,Level 0-2
 Finland,2022,26461,Level 0-2
 Sweden,2022,23838,Level 0-2
-Iceland,2022,:,Level 0-2
+Iceland,2022,,Level 0-2
 Norway,2022,37643,Level 0-2
 Switzerland,2022,38675,Level 0-2
-United Kingdom,2022,:,Level 0-2
+United Kingdom,2022,,Level 0-2
 Montenegro,2022,3498,Level 0-2
-North Macedonia,2022,:,Level 0-2
-Albania,2022,:,Level 0-2
+North Macedonia,2022,,Level 0-2
+Albania,2022,,Level 0-2
 Serbia,2022,3498,Level 0-2
 Türkiye,2022,3199,Level 0-2
 Belgium,2021,21323,Level 0-2
@@ -98,12 +98,12 @@ Slovenia,2021,13312,Level 0-2
 Slovakia,2021,6199,Level 0-2
 Finland,2021,26241,Level 0-2
 Sweden,2021,21815,Level 0-2
-Iceland,2021,:,Level 0-2
+Iceland,2021,,Level 0-2
 Norway,2021,34828,Level 0-2
 Switzerland,2021,40381,Level 0-2
-United Kingdom,2021,:,Level 0-2
+United Kingdom,2021,,Level 0-2
 Montenegro,2021,2985,Level 0-2
-North Macedonia,2021,:,Level 0-2
+North Macedonia,2021,,Level 0-2
 Albania,2021,2388,Level 0-2
 Serbia,2021,3019,Level 0-2
 Türkiye,2021,2978,Level 0-2
@@ -134,10 +134,10 @@ Slovenia,2020,12762,Level 0-2
 Slovakia,2020,6250,Level 0-2
 Finland,2020,25126,Level 0-2
 Sweden,2020,22028,Level 0-2
-Iceland,2020,:,Level 0-2
+Iceland,2020,,Level 0-2
 Norway,2020,37801,Level 0-2
 Switzerland,2020,36874,Level 0-2
-United Kingdom,2020,:,Level 0-2
+United Kingdom,2020,,Level 0-2
 Montenegro,2020,3020,Level 0-2
 North Macedonia,2020,2362,Level 0-2
 Albania,2020,2380,Level 0-2
@@ -173,7 +173,7 @@ Sweden,2019,20805,Level 0-2
 Iceland,2019,37804,Level 0-2
 Norway,2019,36422,Level 0-2
 Switzerland,2019,35700,Level 0-2
-United Kingdom,2019,:,Level 0-2
+United Kingdom,2019,,Level 0-2
 Montenegro,2019,2772,Level 0-2
 North Macedonia,2019,2137,Level 0-2
 Albania,2019,2108,Level 0-2
@@ -278,14 +278,14 @@ Slovenia,2023,18747,Level 3-4
 Slovakia,2023,9560,Level 3-4
 Finland,2023,28978,Level 3-4
 Sweden,2023,32200,Level 3-4
-Iceland,2023,:,Level 3-4
+Iceland,2023,,Level 3-4
 Norway,2023,45281,Level 3-4
 Switzerland,2023,54488,Level 3-4
-United Kingdom,2023,:,Level 3-4
-Montenegro,2023,:,Level 3-4
-North Macedonia,2023,:,Level 3-4
-Albania,2023,:,Level 3-4
-Serbia,2023,:,Level 3-4
+United Kingdom,2023,,Level 3-4
+Montenegro,2023,,Level 3-4
+North Macedonia,2023,,Level 3-4
+Albania,2023,,Level 3-4
+Serbia,2023,,Level 3-4
 Türkiye,2023,4733,Level 3-4
 Belgium,2022,28443,Level 3-4
 Bulgaria,2022,6871,Level 3-4
@@ -314,13 +314,13 @@ Slovenia,2022,17120,Level 3-4
 Slovakia,2022,9406,Level 3-4
 Finland,2022,27662,Level 3-4
 Sweden,2022,30790,Level 3-4
-Iceland,2022,:,Level 3-4
+Iceland,2022,,Level 3-4
 Norway,2022,44555,Level 3-4
 Switzerland,2022,49241,Level 3-4
-United Kingdom,2022,:,Level 3-4
+United Kingdom,2022,,Level 3-4
 Montenegro,2022,4723,Level 3-4
-North Macedonia,2022,:,Level 3-4
-Albania,2022,:,Level 3-4
+North Macedonia,2022,,Level 3-4
+Albania,2022,,Level 3-4
 Serbia,2022,4923,Level 3-4
 Türkiye,2022,4465,Level 3-4
 Belgium,2021,27219,Level 3-4
@@ -350,12 +350,12 @@ Slovenia,2021,16077,Level 3-4
 Slovakia,2021,9091,Level 3-4
 Finland,2021,26889,Level 3-4
 Sweden,2021,29706,Level 3-4
-Iceland,2021,:,Level 3-4
+Iceland,2021,,Level 3-4
 Norway,2021,39516,Level 3-4
 Switzerland,2021,50457,Level 3-4
-United Kingdom,2021,:,Level 3-4
+United Kingdom,2021,,Level 3-4
 Montenegro,2021,4300,Level 3-4
-North Macedonia,2021,:,Level 3-4
+North Macedonia,2021,,Level 3-4
 Albania,2021,3153,Level 3-4
 Serbia,2021,4420,Level 3-4
 Türkiye,2021,4145,Level 3-4
@@ -386,10 +386,10 @@ Slovenia,2020,15280,Level 3-4
 Slovakia,2020,9433,Level 3-4
 Finland,2020,27143,Level 3-4
 Sweden,2020,28518,Level 3-4
-Iceland,2020,:,Level 3-4
+Iceland,2020,,Level 3-4
 Norway,2020,43653,Level 3-4
 Switzerland,2020,48258,Level 3-4
-United Kingdom,2020,:,Level 3-4
+United Kingdom,2020,,Level 3-4
 Montenegro,2020,4441,Level 3-4
 North Macedonia,2020,3462,Level 3-4
 Albania,2020,3143,Level 3-4
@@ -425,7 +425,7 @@ Sweden,2019,28288,Level 3-4
 Iceland,2019,40442,Level 3-4
 Norway,2019,42848,Level 3-4
 Switzerland,2019,46454,Level 3-4
-United Kingdom,2019,:,Level 3-4
+United Kingdom,2019,,Level 3-4
 Montenegro,2019,4224,Level 3-4
 North Macedonia,2019,3092,Level 3-4
 Albania,2019,2793,Level 3-4
@@ -530,14 +530,14 @@ Slovenia,2023,23542,Level 5-8
 Slovakia,2023,10722,Level 5-8
 Finland,2023,38662,Level 5-8
 Sweden,2023,35269,Level 5-8
-Iceland,2023,:,Level 5-8
+Iceland,2023,,Level 5-8
 Norway,2023,51556,Level 5-8
 Switzerland,2023,72129,Level 5-8
-United Kingdom,2023,:,Level 5-8
-Montenegro,2023,:,Level 5-8
-North Macedonia,2023,:,Level 5-8
-Albania,2023,:,Level 5-8
-Serbia,2023,:,Level 5-8
+United Kingdom,2023,,Level 5-8
+Montenegro,2023,,Level 5-8
+North Macedonia,2023,,Level 5-8
+Albania,2023,,Level 5-8
+Serbia,2023,,Level 5-8
 Türkiye,2023,7418,Level 5-8
 Belgium,2022,36330,Level 5-8
 Bulgaria,2022,11223,Level 5-8
@@ -566,13 +566,13 @@ Slovenia,2022,21588,Level 5-8
 Slovakia,2022,10888,Level 5-8
 Finland,2022,37601,Level 5-8
 Sweden,2022,34993,Level 5-8
-Iceland,2022,:,Level 5-8
+Iceland,2022,,Level 5-8
 Norway,2022,50501,Level 5-8
 Switzerland,2022,67348,Level 5-8
-United Kingdom,2022,:,Level 5-8
+United Kingdom,2022,,Level 5-8
 Montenegro,2022,6986,Level 5-8
-North Macedonia,2022,:,Level 5-8
-Albania,2022,:,Level 5-8
+North Macedonia,2022,,Level 5-8
+Albania,2022,,Level 5-8
 Serbia,2022,7662,Level 5-8
 Türkiye,2022,7084,Level 5-8
 Belgium,2021,34518,Level 5-8
@@ -602,12 +602,12 @@ Slovenia,2021,20047,Level 5-8
 Slovakia,2021,10627,Level 5-8
 Finland,2021,36090,Level 5-8
 Sweden,2021,33731,Level 5-8
-Iceland,2021,:,Level 5-8
+Iceland,2021,,Level 5-8
 Norway,2021,45191,Level 5-8
 Switzerland,2021,66754,Level 5-8
-United Kingdom,2021,:,Level 5-8
+United Kingdom,2021,,Level 5-8
 Montenegro,2021,6362,Level 5-8
-North Macedonia,2021,:,Level 5-8
+North Macedonia,2021,,Level 5-8
 Albania,2021,4739,Level 5-8
 Serbia,2021,7146,Level 5-8
 Türkiye,2021,6768,Level 5-8
@@ -638,10 +638,10 @@ Slovenia,2020,19931,Level 5-8
 Slovakia,2020,10910,Level 5-8
 Finland,2020,36719,Level 5-8
 Sweden,2020,32536,Level 5-8
-Iceland,2020,:,Level 5-8
+Iceland,2020,,Level 5-8
 Norway,2020,50553,Level 5-8
 Switzerland,2020,62195,Level 5-8
-United Kingdom,2020,:,Level 5-8
+United Kingdom,2020,,Level 5-8
 Montenegro,2020,6423,Level 5-8
 North Macedonia,2020,4556,Level 5-8
 Albania,2020,4675,Level 5-8
@@ -677,7 +677,7 @@ Sweden,2019,32825,Level 5-8
 Iceland,2019,45079,Level 5-8
 Norway,2019,50143,Level 5-8
 Switzerland,2019,58701,Level 5-8
-United Kingdom,2019,:,Level 5-8
+United Kingdom,2019,,Level 5-8
 Montenegro,2019,6328,Level 5-8
 North Macedonia,2019,4219,Level 5-8
 Albania,2019,4395,Level 5-8

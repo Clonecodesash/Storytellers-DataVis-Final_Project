@@ -29,10 +29,10 @@ Sweden,2023,25.6,Level 0-2
 Iceland,2023,6.8,Level 0-2
 Norway,2023,9.4,Level 0-2
 Switzerland,2023,8,Level 0-2
-United Kingdom,2023,:,Level 0-2
+United Kingdom,2023,,Level 0-2
 Bosnia and Herzegovina,2023,23.7,Level 0-2
-Montenegro,2023,:,Level 0-2
-North Macedonia,2023,:,Level 0-2
+Montenegro,2023,,Level 0-2
+North Macedonia,2023,,Level 0-2
 Serbia,2023,14.7,Level 0-2
 Türkiye,2023,8.3,Level 0-2
 Belgium,2022,13.4,Level 0-2
@@ -65,10 +65,10 @@ Sweden,2022,26.2,Level 0-2
 Iceland,2022,7.5,Level 0-2
 Norway,2022,8.1,Level 0-2
 Switzerland,2022,8.4,Level 0-2
-United Kingdom,2022,:,Level 0-2
+United Kingdom,2022,,Level 0-2
 Bosnia and Herzegovina,2022,26.1,Level 0-2
-Montenegro,2022,:,Level 0-2
-North Macedonia,2022,:,Level 0-2
+Montenegro,2022,,Level 0-2
+North Macedonia,2022,,Level 0-2
 Serbia,2022,14.2,Level 0-2
 Türkiye,2022,9.4,Level 0-2
 Belgium,2021,14.7,Level 0-2
@@ -101,10 +101,10 @@ Sweden,2021,29.5,Level 0-2
 Iceland,2021,10.2,Level 0-2
 Norway,2021,10.7,Level 0-2
 Switzerland,2021,9.7,Level 0-2
-United Kingdom,2021,:,Level 0-2
+United Kingdom,2021,,Level 0-2
 Bosnia and Herzegovina,2021,25.9,Level 0-2
-Montenegro,2021,:,Level 0-2
-North Macedonia,2021,:,Level 0-2
+Montenegro,2021,,Level 0-2
+North Macedonia,2021,,Level 0-2
 Serbia,2021,15.7,Level 0-2
 Türkiye,2021,11.4,Level 0-2
 Belgium,2020,12.3,Level 0-2
@@ -137,8 +137,8 @@ Sweden,2020,25.8,Level 0-2
 Iceland,2020,8.6,Level 0-2
 Norway,2020,9.2,Level 0-2
 Switzerland,2020,8.7,Level 0-2
-United Kingdom,2020,:,Level 0-2
-Bosnia and Herzegovina,2020,:,Level 0-2
+United Kingdom,2020,,Level 0-2
+Bosnia and Herzegovina,2020,,Level 0-2
 Montenegro,2020,35.5,Level 0-2
 North Macedonia,2020,22.3,Level 0-2
 Serbia,2020,10.7,Level 0-2
@@ -174,7 +174,7 @@ Iceland,2019,6,Level 0-2
 Norway,2019,8.2,Level 0-2
 Switzerland,2019,8.3,Level 0-2
 United Kingdom,2019,6.8,Level 0-2
-Bosnia and Herzegovina,2019,:,Level 0-2
+Bosnia and Herzegovina,2019,,Level 0-2
 Montenegro,2019,27.3,Level 0-2
 North Macedonia,2019,24,Level 0-2
 Serbia,2019,13,Level 0-2
@@ -210,7 +210,7 @@ Iceland,2018,4.7,Level 0-2
 Norway,2018,8.6,Level 0-2
 Switzerland,2018,8.5,Level 0-2
 United Kingdom,2018,6.6,Level 0-2
-Bosnia and Herzegovina,2018,:,Level 0-2
+Bosnia and Herzegovina,2018,,Level 0-2
 Montenegro,2018,21.1,Level 0-2
 North Macedonia,2018,24.6,Level 0-2
 Serbia,2018,14.4,Level 0-2
@@ -246,7 +246,7 @@ Iceland,2017,5,Level 0-2
 Norway,2017,9.6,Level 0-2
 Switzerland,2017,8.5,Level 0-2
 United Kingdom,2017,7.6,Level 0-2
-Bosnia and Herzegovina,2017,:,Level 0-2
+Bosnia and Herzegovina,2017,,Level 0-2
 Montenegro,2017,23.1,Level 0-2
 North Macedonia,2017,27.1,Level 0-2
 Serbia,2017,13.2,Level 0-2
@@ -281,10 +281,10 @@ Sweden,2023,6.1,Level 3-4
 Iceland,2023,3.2,Level 3-4
 Norway,2023,2.7,Level 3-4
 Switzerland,2023,3.7,Level 3-4
-United Kingdom,2023,:,Level 3-4
+United Kingdom,2023,,Level 3-4
 Bosnia and Herzegovina,2023,13.2,Level 3-4
-Montenegro,2023,:,Level 3-4
-North Macedonia,2023,:,Level 3-4
+Montenegro,2023,,Level 3-4
+North Macedonia,2023,,Level 3-4
 Serbia,2023,10.2,Level 3-4
 Türkiye,2023,11.3,Level 3-4
 Belgium,2022,6.4,Level 3-4
@@ -317,10 +317,10 @@ Sweden,2022,5.8,Level 3-4
 Iceland,2022,3.4,Level 3-4
 Norway,2022,2.6,Level 3-4
 Switzerland,2022,3.9,Level 3-4
-United Kingdom,2022,:,Level 3-4
+United Kingdom,2022,,Level 3-4
 Bosnia and Herzegovina,2022,15.5,Level 3-4
-Montenegro,2022,:,Level 3-4
-North Macedonia,2022,:,Level 3-4
+Montenegro,2022,,Level 3-4
+North Macedonia,2022,,Level 3-4
 Serbia,2022,10.7,Level 3-4
 Türkiye,2022,12.1,Level 3-4
 Belgium,2021,7,Level 3-4
@@ -353,10 +353,10 @@ Sweden,2021,6.9,Level 3-4
 Iceland,2021,6.2,Level 3-4
 Norway,2021,3.6,Level 3-4
 Switzerland,2021,5.3,Level 3-4
-United Kingdom,2021,:,Level 3-4
+United Kingdom,2021,,Level 3-4
 Bosnia and Herzegovina,2021,18,Level 3-4
-Montenegro,2021,:,Level 3-4
-North Macedonia,2021,:,Level 3-4
+Montenegro,2021,,Level 3-4
+North Macedonia,2021,,Level 3-4
 Serbia,2021,11.9,Level 3-4
 Türkiye,2021,13.5,Level 3-4
 Belgium,2020,5.8,Level 3-4
@@ -389,8 +389,8 @@ Sweden,2020,6.5,Level 3-4
 Iceland,2020,5.7,Level 3-4
 Norway,2020,4.5,Level 3-4
 Switzerland,2020,5.2,Level 3-4
-United Kingdom,2020,:,Level 3-4
-Bosnia and Herzegovina,2020,:,Level 3-4
+United Kingdom,2020,,Level 3-4
+Bosnia and Herzegovina,2020,,Level 3-4
 Montenegro,2020,18.3,Level 3-4
 North Macedonia,2020,16.2,Level 3-4
 Serbia,2020,9.8,Level 3-4
@@ -426,7 +426,7 @@ Iceland,2019,3.4,Level 3-4
 Norway,2019,3.6,Level 3-4
 Switzerland,2019,4.5,Level 3-4
 United Kingdom,2019,4.1,Level 3-4
-Bosnia and Herzegovina,2019,:,Level 3-4
+Bosnia and Herzegovina,2019,,Level 3-4
 Montenegro,2019,15.5,Level 3-4
 North Macedonia,2019,16.6,Level 3-4
 Serbia,2019,11.5,Level 3-4
@@ -462,7 +462,7 @@ Iceland,2018,2.3,Level 3-4
 Norway,2018,3.6,Level 3-4
 Switzerland,2018,4.9,Level 3-4
 United Kingdom,2018,4.8,Level 3-4
-Bosnia and Herzegovina,2018,:,Level 3-4
+Bosnia and Herzegovina,2018,,Level 3-4
 Montenegro,2018,16.8,Level 3-4
 North Macedonia,2018,21.1,Level 3-4
 Serbia,2018,14,Level 3-4
@@ -498,7 +498,7 @@ Iceland,2017,2.6,Level 3-4
 Norway,2017,3.8,Level 3-4
 Switzerland,2017,4.8,Level 3-4
 United Kingdom,2017,4.9,Level 3-4
-Bosnia and Herzegovina,2017,:,Level 3-4
+Bosnia and Herzegovina,2017,,Level 3-4
 Montenegro,2017,17.7,Level 3-4
 North Macedonia,2017,22.6,Level 3-4
 Serbia,2017,15,Level 3-4
@@ -533,10 +533,10 @@ Sweden,2023,3.9,Level 5-8
 Iceland,2023,2.3,Level 5-8
 Norway,2023,2.2,Level 5-8
 Switzerland,2023,3.2,Level 5-8
-United Kingdom,2023,:,Level 5-8
+United Kingdom,2023,,Level 5-8
 Bosnia and Herzegovina,2023,9.3,Level 5-8
-Montenegro,2023,:,Level 5-8
-North Macedonia,2023,:,Level 5-8
+Montenegro,2023,,Level 5-8
+North Macedonia,2023,,Level 5-8
 Serbia,2023,6.9,Level 5-8
 Türkiye,2023,9.9,Level 5-8
 Belgium,2022,3.1,Level 5-8
@@ -569,10 +569,10 @@ Sweden,2022,3.3,Level 5-8
 Iceland,2022,2.5,Level 5-8
 Norway,2022,1.9,Level 5-8
 Switzerland,2022,3.1,Level 5-8
-United Kingdom,2022,:,Level 5-8
+United Kingdom,2022,,Level 5-8
 Bosnia and Herzegovina,2022,10.8,Level 5-8
-Montenegro,2022,:,Level 5-8
-North Macedonia,2022,:,Level 5-8
+Montenegro,2022,,Level 5-8
+North Macedonia,2022,,Level 5-8
 Serbia,2022,6.1,Level 5-8
 Türkiye,2022,11.5,Level 5-8
 Belgium,2021,3.6,Level 5-8
@@ -605,10 +605,10 @@ Sweden,2021,4.5,Level 5-8
 Iceland,2021,4.2,Level 5-8
 Norway,2021,2.7,Level 5-8
 Switzerland,2021,3.5,Level 5-8
-United Kingdom,2021,:,Level 5-8
+United Kingdom,2021,,Level 5-8
 Bosnia and Herzegovina,2021,12,Level 5-8
-Montenegro,2021,:,Level 5-8
-North Macedonia,2021,:,Level 5-8
+Montenegro,2021,,Level 5-8
+North Macedonia,2021,,Level 5-8
 Serbia,2021,8.7,Level 5-8
 Türkiye,2021,12.5,Level 5-8
 Belgium,2020,3.5,Level 5-8
@@ -641,8 +641,8 @@ Sweden,2020,4.8,Level 5-8
 Iceland,2020,3.9,Level 5-8
 Norway,2020,2.8,Level 5-8
 Switzerland,2020,3.6,Level 5-8
-United Kingdom,2020,:,Level 5-8
-Bosnia and Herzegovina,2020,:,Level 5-8
+United Kingdom,2020,,Level 5-8
+Bosnia and Herzegovina,2020,,Level 5-8
 Montenegro,2020,13.6,Level 5-8
 North Macedonia,2020,13.8,Level 5-8
 Serbia,2020,8.1,Level 5-8
@@ -678,7 +678,7 @@ Iceland,2019,2.4,Level 5-8
 Norway,2019,2.2,Level 5-8
 Switzerland,2019,3.3,Level 5-8
 United Kingdom,2019,2.5,Level 5-8
-Bosnia and Herzegovina,2019,:,Level 5-8
+Bosnia and Herzegovina,2019,,Level 5-8
 Montenegro,2019,11.6,Level 5-8
 North Macedonia,2019,14.3,Level 5-8
 Serbia,2019,8.5,Level 5-8
@@ -714,7 +714,7 @@ Iceland,2018,1.9,Level 5-8
 Norway,2018,2.4,Level 5-8
 Switzerland,2018,3.6,Level 5-8
 United Kingdom,2018,2.5,Level 5-8
-Bosnia and Herzegovina,2018,:,Level 5-8
+Bosnia and Herzegovina,2018,,Level 5-8
 Montenegro,2018,10.5,Level 5-8
 North Macedonia,2018,17.9,Level 5-8
 Serbia,2018,11,Level 5-8
@@ -750,7 +750,7 @@ Iceland,2017,1.7,Level 5-8
 Norway,2017,2.5,Level 5-8
 Switzerland,2017,3.9,Level 5-8
 United Kingdom,2017,2.8,Level 5-8
-Bosnia and Herzegovina,2017,:,Level 5-8
+Bosnia and Herzegovina,2017,,Level 5-8
 Montenegro,2017,11.2,Level 5-8
 North Macedonia,2017,18.8,Level 5-8
 Serbia,2017,12.4,Level 5-8
