@@ -1,33 +1,170 @@
 <div class="flex flex-col min-h-screen">
   <!-- Header Section -->
   <header class="header mb-8 text-center p-6 bg-primary">
-    <a [routerLink]="['/']"
-      class="absolute top-0 left-0 p-2 rounded-br-lg text-white bg-primary-light hover:text-gray-500 font-semibold">
-      ← Home
-    </a>
     <h1 class="text-4xl font-bold text-white mt-12 lg:mt-4 mb-6">The Economic Impact of Higher Education Across Europe
     </h1>
-    <p class="text-gray-200">A Data-Driven Visualization</p>
+    <p class="text-lg text-gray-200">A Data-Driven Visualization</p>
+    <p class="mt-4 text-gray-200">By The Storytellers - Melica Omer Ali & Robert Tetteh Ashley</p>
   </header>
 
   <main class="flex-grow w-full bg-white p-4 md:p-8">
     <div class="max-w-full md:max-w-[85%] mx-auto">
       <section class="mb-8">
-        <h2 class="text-2xl font-semibold text-secondary mb-4">Data at a glance</h2>
-        <p class="text-gray-700 mb-6">
+        <h2 class="text-2xl font-semibold text-secondary mb-4">Regional Distribution of Educational Attainment</h2>
+        <p class="text-gray-700 mb-6">Understanding the geographic distribution of tertiary education is essential to
+          identify patterns and disparities across European countries. This section explores how education levels vary
+          regionally and how different nations have progressed in higher education attainment.
         </p>
-        <p class="text-gray-900 font-semibold flex justify-center mb-8"></p>
-        <app-bar></app-bar>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Percentage of People with Tertiary Education</p>
         <app-choropleth></app-choropleth>
-        <app-heatmap></app-heatmap>
-        <app-network></app-network>
-        <app-pie></app-pie>
-        <app-stackedbar></app-stackedbar>
-        <app-stackedarea></app-stackedarea>
-        <app-bubble></app-bubble>
-        <app-line></app-line>
-        <app-scatter></app-scatter>
+        <p class="text-gray-700 mb-6">The choropleth map illustrates the percentage of the population with tertiary
+          education across Europe between the ages of 20-25, with darker shades representing higher percentages and
+          lighter shades indicating lower levels. The map reveals significant regional disparities. Countries like
+          Ireland , the United Kingdom, Croatia, and Serbia record percentages over 90% of the population. In contrast,
+          nations such as Iceland, Turkey and Germany have lower levels, with less than 80% of their populations
+          attaining higher education. Notably, countries in Central and Eastern Europe, such as Poland, Greece and the
+          Czech Republic, have shown steady growth in tertiary education levels across the years reflecting recent
+          educational reforms. </p>
       </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-secondary mb-4">The Relationship Between Education and Income</h2>
+        <p class="text-gray-700 mb-6">
+          Higher education is often linked to increased earnings and economic stability. This section examines how
+          different levels of education impact income across various European countries, highlighting trends and
+          disparities.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Average Income by Educational Level</p>
+        <app-bar></app-bar>
+        <p class="text-gray-700 mb-6">The bar chart illustrates the relationship between educational attainment and
+          income levels. It shows that as the education level increases, so does the average income. Individuals with a
+          high school diploma earn the least, while those with a bachelor's degree see a noticeable jump in earnings.
+          The highest incomes are observed among individuals with master's and doctorate degrees. This trend highlights
+          the financial advantage of pursuing higher education. However, the chart also reveals any income gaps between
+          different levels, emphasising the impact of education on earning potential. And in countries like Switzerland,
+          Luxembourg, and Denmark, you notice the differences between the income of the level 0-2, 3-4 don't differ a
+          lot from that of the level 5-8. In such a country, you realise education impacts your income.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Income Inequality by Education Level</p>
+        <app-stackedbar></app-stackedbar>
+        <p class="text-gray-700 mb-6">
+          This stacked bar chart illustrates the income distribution across different educational levels for a selection
+          of European countries. On the Y-axis, countries are listed, while the X-axis represents income levels. Each
+          bar is segmented by educational attainment levels, showing how much each educational group contributes to the
+          total income distribution within a given country.
+          The chart highlights how income inequality varies across education levels. For example, countries like
+          Switzerland, Austria and Norway may show a smaller gap between educational levels, with high income levels
+          across both secondary and tertiary education. On the other hand, countries like Luxembourg or Greece might
+          show wider income disparities, with lower income for individuals with only primary or secondary education
+          compared to those with tertiary education.
+          By visualizing these income differences, the chart helps demonstrate the role education plays in shaping
+          income inequality in different regions, allowing for easy comparisons between countries and the years.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Education, Income, and Employment Interactions
+        </p>
+        <app-network></app-network>
+        <p class="text-gray-700 mt-14 mb-6">The alluvial chart maps the interaction between educational attainment,
+          income,
+          and employment across European countries. Generally, you notice that over the years, the level 3-4 education
+          increases concerning the population and usually people with educational levels of 5-8 earn above the 30,000s.
+          The data shows that in Ireland, Switzerland, Sweden, and Norway, individuals with tertiary education
+          overwhelmingly secure high-income and stable employment with a high percentage. In contrast, in Serbia and
+          North Macedonia, even those with university degrees face lower-income jobs, reflecting weaker labour market
+          integration. In Poland, Romania, Bulgaria and Hungary, tertiary education leads to better job prospects but
+          does not always guarantee high wages. Meanwhile, in Norway and Switzerland, education does not strongly
+          correlate with income, with little wage progression from secondary to tertiary levels.
+        </p>
+      </section>
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-secondary mb-4"> Education and Economic Performance</h2>
+        <p class="text-gray-700 mb-6">
+          Educational attainment is often correlated with a nation's economic prosperity. This section explores the
+          connection between education levels and GDP per capita to assess how education impacts economic performance.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Education, Employment, and Income by Country</p>
+        <app-bubble></app-bubble>
+        <p class="text-gray-700 my-6">This bubble chart visualizes the complex relationship between educational
+          attainment, employment rates, and income by country. The size of each bubble represents GDP, offering a
+          comprehensive view of how education impacts employment and income levels across different European nations.
+          Switzerland and Norway have more than 85% of the population with tertiary education employed with higher
+          incomes. Another thing to notice is although Germany has a bigger economy, the income from Switzerland,
+          Luxembourg and Norway is much higher than that of Germany and this is usually due to the different standards
+          of living across countries. An individual with an immediate level of education from Germany still earns about
+          the same salary as an individual with an advanced level of education.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Educational Attainment vs. GDP per Capita in PPS
+        </p>
+        <app-scatter></app-scatter>
+        <p class="text-gray-700 my-6">
+          This scatter plot visualizes the relationship between the percentage of the population with tertiary education
+          (higher education) and GDP per capita in Purchasing Power Standards (PPS) across European countries. PPS is a
+          standardized measure that adjusts GDP to account for differences in living costs, with a value of 100
+          representing the EU average. Countries with higher percentages of tertiary-educated individuals generally
+          appear above the 100 PPS baseline, indicating a correlation between higher education levels and stronger
+          economic performance. For example, nations like Luxembourg, Norway, Switzerland and Ireland, with high
+          tertiary education rates, tend to have GDP per capita significantly above the EU average, while countries with
+          lower educational attainment, such as Serbia and Bosnia and Herzegovina, often show GDP per capita below the
+          EU baseline. This visualization allows us to explore whether higher educational attainment is associated with
+          higher national economic productivity, suggesting that a more educated workforce could contribute to economic
+          growth and development.
+        </p>
+      </section>
+
+      <section class="mb-8">
+        <h2 class="text-2xl font-semibold text-secondary mb-4">Employment and Labor Market Trends
+        </h2>
+        <p class="text-gray-700 mb-6">
+          The labour market is significantly influenced by educational attainment. This section investigates employment
+          rates, labour market participation, and unemployment patterns across different education levels.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Employment Rates by Education Level
+        </p>
+        <app-stackedarea></app-stackedarea>
+        <p class="text-gray-700 mb-6">This chart shows the changing trends in employment rates based on education level
+          over time. It also shows the employment rate share of countries for the employment rate in Europe. It allows
+          us to see how education impacts workforce participation, particularly for individuals with different levels of
+          education. Each chart is a visualization for one education level.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Labor Market Participation vs. Education Level
+        </p>
+        <app-line></app-line>
+        <p class="text-gray-700 my-6">
+          This line chart compares labour market participation rates over time for individuals with different levels of
+          education (primary, secondary, and tertiary). The x-axis represents the years, while the y-axis shows the
+          employment rate for each education level. By examining the trends, we can observe how labour market
+          participation for individuals with tertiary education has generally increased, reflecting the growing demand
+          for higher-skilled workers. In contrast, participation rates for individuals with primary or secondary
+          education may show slower growth or stagnation, highlighting the disparity in employment opportunities based
+          on educational attainment.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Unemployment Rate by Education Level
+        </p>
+        <app-heatmap></app-heatmap>
+        <p class="text-gray-700 mb-6">
+          The heatmap visualizes the unemployment rate across European countries, categorized by education level. Darker
+          shades indicate higher unemployment rates, while lighter shades represent lower rates. A clear regional
+          pattern emerges: countries in Southern Europe, such as Slovakia and Bosnia and Herzegovina, exhibit higher
+          unemployment rates across the lower education levels, with particularly high rates among those with only
+          primary or secondary education. In contrast, Northern European nations, such as Germany, Hungary, and Poland,
+          show significantly lower unemployment, especially among individuals with tertiary education. Interestingly, in
+          Slovakia, although there is high unemployment in the level 0-2 educational levels, there is a very low
+          unemployment rate in the higher educational levels.
+        </p>
+        <p class="text-gray-900 font-semibold flex justify-center my-8">Workforce Participation by Educational
+          Attainment
+        </p>
+        <app-pie></app-pie>
+        <p class="text-gray-700 mb-6">
+          The chart compares countries such as Greece, Romania, Italy and France where tertiary education plays a
+          significant role in workforce participation. In contrast, countries like Germany and Spain may show a higher
+          percentage of workers with secondary or primary education. The pie chart provides insights into the
+          educational composition of the labour market and helps illustrate the role of education in shaping workforce
+          participation across different nations.
+          You can interactively select a country and year to observe how workforce participation evolves and compare
+          trends across nations.
+        </p>
+      </section>
+      <p class="text-gray-700 mb-6"><b>Data Source:</b> Eurostat</p>
     </div>
   </main>
 

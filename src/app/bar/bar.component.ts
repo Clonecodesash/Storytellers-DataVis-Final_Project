@@ -96,13 +96,6 @@ export class BarComponent implements AfterViewInit {
         .attr('transform', `translate(0,0)`)
         .call(d3.axisTop(x));
 
-      svg.append('text')
-        .attr('x', (this.width - this.margin.left - this.margin.right) / 2)
-        .attr('y', -50)
-        .attr('text-anchor', 'middle')
-        .style('font-size', '16px')
-        .text(`Income by Educational Level (${this.selectedYear})`);
-
       const legend = svg.append('g')
         .attr('transform', `translate(${this.width - this.margin.right - 350}, -100)`);
 

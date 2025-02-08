@@ -95,14 +95,6 @@ export class StackedbarComponent implements AfterViewInit {
       .text('Country')
       .style('font-size', '14px');
 
-    this.svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('x', (this.width - this.margin.left - this.margin.right) / 2)
-      .attr('y', -20)
-      .text('Income by Educational Level and Country')
-      .style('font-size', '16px')
-      .style('font-weight', 'bold');
-
     let tooltip = d3.select('body').append('div')
       .attr('class', 'tooltip')
       .style('position', 'absolute')
