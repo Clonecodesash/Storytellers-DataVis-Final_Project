@@ -1,1 +1,7 @@
+<div>
+  <label for="countrySelect">Select Country: </label>
+  <select id="countrySelect" (change)="updateChart($event)">
+    <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+  </select>
+</div>
 <div #chart></div>

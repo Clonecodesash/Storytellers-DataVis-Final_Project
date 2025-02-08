@@ -1,7 +1,0 @@
-Source,Target,Weight
-Education,Employment,0.9
-Education,Income,0.8
-Employment,Income,0.85
-Education,GDP,0.75
-Employment,GDP,0.7
-Income,GDP,0.95

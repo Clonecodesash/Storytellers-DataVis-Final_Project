@@ -1,18 +1,20 @@
+import { CommonModule } from '@angular/common';
 import { Component, ElementRef, ViewChild, AfterViewInit } from '@angular/core';
 import * as d3 from 'd3';
 
 @Component({
   selector: 'app-bar',
   templateUrl: './bar.component.html',
+  imports: [CommonModule],
   styleUrls: ['./bar.component.css']
 })
 export class BarComponent implements AfterViewInit {
-
-@ViewChild('chart', { static: true }) chartContainer!: ElementRef;
-
+  @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
   private width = window.innerWidth * 0.9;
-  private height = window.innerHeight * 0.6;
-  private margin = { top: 20, right: 30, bottom: 40, left: 60 };
+  private height = window.innerHeight * 1.5;
+  private margin = { top: 120, right: 100, bottom: 70, left: 100 };
+  years: number[] = [2017, 2018, 2019, 2020, 2021, 2022, 2023];
+  private selectedYear = 2017;
 
   ngAfterViewInit(): void {
     this.createBarChart();
@@ -30,47 +32,106 @@ export class BarComponent implements AfterViewInit {
       .append('g')
       .attr('transform', `translate(${this.margin.left},${this.margin.top})`);
 
-    d3.csv('assets/bar.csv').then((data: any) => {
-      const x = d3.scaleBand()
-        .domain(data.map((d: any) => d.Country))
-        .range([0, this.width - this.margin.left - this.margin.right])
+    const tooltip = d3.select(container)
+      .append('div')
+      .style('position', 'absolute')
+      .style('visibility', 'hidden')
+      .style('background', 'lightgray')
+      .style('padding', '5px')
+      .style('border-radius', '5px');
+
+    d3.csv('assets/data/barchart/combined_mean_income_data.csv').then((data: any) => {
+      data = data.filter((d: any) => +d.Year === this.selectedYear);
+      const subgroups = [...new Set(data.map((d: any) => d['Educational Level']))];
+      const groups = [...new Set(data.map((d: any) => d.Country))];
+
+      const y = d3.scaleBand()
+        .domain(groups as string[])
+        .range([0, this.height - this.margin.top - this.margin.bottom])
         .padding(0.2);
 
-      const y = d3.scaleLinear()
-        .domain([0, d3.max(data, (d: any) => +d.Tertiary)!])
+      const ySubgroup = d3.scaleBand()
+        .domain(subgroups as string[])
+        .range([0, y.bandwidth()])
+        .padding(0.05);
+
+      const x = d3.scaleLinear()
+        .domain([0, d3.max(data, (d: any) => +d.Income)!])
         .nice()
-        .range([this.height - this.margin.top - this.margin.bottom, 0]);
+        .range([0, this.width - this.margin.left - this.margin.right]);
+
+      const color = d3.scaleOrdinal<string>()
+        .domain(subgroups as string[])
+        .range(d3.schemeCategory10);
 
       svg.append('g')
+        .selectAll('g')
+        .data(groups)
+        .enter().append('g')
+        .attr('transform', (d: any) => `translate(0, ${y(d)!})`)
         .selectAll('rect')
-        .data(data)
-        .enter()
-        .append('rect')
-        .attr('x', (d: any) => x(d.Country)!)
-        .attr('y', (d: any) => y(+d.Tertiary))
-        .attr('height', (d: any) => this.height - this.margin.top - this.margin.bottom - y(+d.Tertiary))
-        .attr('width', x.bandwidth())
-        .attr('fill', 'steelblue')
+        .data((d: any) => subgroups.map((key) => ({ key, value: data.find((item: any) => item.Country === d && item['Educational Level'] === key)?.Income || 0 })))
+        .enter().append('rect')
+        .attr('y', (d: any) => ySubgroup(d.key)!)
+        .attr('x', 0)
+        .attr('height', ySubgroup.bandwidth())
+        .attr('width', (d: any) => x(+d.value))
+        .attr('fill', (d: any) => color(d.key))
         .on('mouseover', (event, d: any) => {
-          d3.select(event.target).attr('fill', 'darkblue');
+          tooltip.style('visibility', 'visible').text(`${d.key}: ${d.value}`);
+          d3.select(event.target).attr('opacity', 0.7);
+        })
+        .on('mousemove', (event) => {
+          tooltip.style('top', `${event.pageY - 10}px`).style('left', `${event.pageX + 10}px`);
         })
         .on('mouseout', (event) => {
-          d3.select(event.target).attr('fill', 'steelblue');
+          tooltip.style('visibility', 'hidden');
+          d3.select(event.target).attr('opacity', 1);
         });
 
       svg.append('g')
-        .attr('transform', `translate(0,${this.height - this.margin.top - this.margin.bottom})`)
-        .call(d3.axisBottom(x));
+        .call(d3.axisLeft(y).tickSize(0));
 
       svg.append('g')
-        .call(d3.axisLeft(y));
+        .attr('transform', `translate(0,0)`)
+        .call(d3.axisTop(x));
+
+      svg.append('text')
+        .attr('x', (this.width - this.margin.left - this.margin.right) / 2)
+        .attr('y', -50)
+        .attr('text-anchor', 'middle')
+        .style('font-size', '16px')
+        .text(`Income by Educational Level (${this.selectedYear})`);
+
+      const legend = svg.append('g')
+        .attr('transform', `translate(${this.width - this.margin.right - 350}, -100)`);
+
+      subgroups.forEach((level, i) => {
+        legend.append('rect')
+          .attr('x', i * 100)
+          .attr('y', 0)
+          .attr('width', 15)
+          .attr('height', 15)
+          .attr('fill', color(level as string));
+
+        legend.append('text')
+          .attr('x', i * 100 + 20)
+          .attr('y', 12)
+          .text(level as string)
+          .style('font-size', '12px')
+          .attr('alignment-baseline', 'middle');
+      });
     });
+  }
+
+  updateChart(event: any): void {
+    this.selectedYear = +event.target.value;
+    this.createBarChart();
   }
 
   private resizeChart(): void {
     this.width = window.innerWidth * 0.9;
-    this.height = window.innerHeight * 0.6;
+    this.height = window.innerHeight * 1.5;
     this.createBarChart();
   }
-
 }

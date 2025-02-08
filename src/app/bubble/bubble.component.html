@@ -1,1 +1,7 @@
+<div>
+  <label for="yearSelect">Select Year:</label>
+  <select id="yearSelect" (change)="updateChart($event)">
+    <option *ngFor="let year of availableYears" [value]="year">{{ year }}</option>
+  </select>
+</div>
 <div #chart></div>

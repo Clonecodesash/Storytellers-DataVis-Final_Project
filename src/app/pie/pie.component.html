@@ -1,1 +1,12 @@
+<div class="mt-16">
+    <label for="yearSelector">Select Year:</label>
+    <select id="yearSelector" (change)="updateYear($event)">
+        <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+    </select>
+
+    <label for="countrySelector">Select Country:</label>
+    <select id="countrySelector" (change)="updateCountry($event)">
+        <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
+    </select>
+</div>
 <div #chart></div>

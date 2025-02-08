@@ -1,6 +1,7 @@
-<!-- <div class="flex items-center gap-4">
-  <div id="heatmapYearSelector" class="heatmap-year-selector"></div>
-  <div id="heatmapRangeSelector" class="heatmap-range-selector"></div>
+<div>
+  <label for="yearSelect">Select Year: </label>
+  <select id="yearSelect" (change)="updateYear($event)">
+    <option *ngFor="let year of years" [value]="year">{{ year }}</option>
+  </select>
 </div>
-<figure id="heatmap-chart" class="chart-container"></figure> -->
 <div #chart></div>
