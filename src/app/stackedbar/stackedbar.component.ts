@@ -13,7 +13,7 @@ export class StackedbarComponent implements AfterViewInit {
 
   private width = window.innerWidth * 0.9;
   private height = window.innerHeight * 0.9;
-  private margin = window.innerWidth > 600 ? { top: 40, right: 150, bottom: 50, left: 100 } : { top: 20, right: 10, bottom: 50, left: 60 };
+  private margin = window.innerWidth > 600 ? { top: 100, right: 150, bottom: 100, left: 100 } : { top: 20, right: 10, bottom: 50, left: 60 };
   private svg!: any;
   private color = d3.scaleOrdinal(d3.schemeCategory10);
   private selectedYear = 2023;
@@ -51,25 +51,44 @@ export class StackedbarComponent implements AfterViewInit {
 
     let levels = ['Level 0-2', 'Level 3-4', 'Level 5-8'];
 
-    let series = Array.from(nestedData, ([key, values]) => {
-      let obj: { [key: string]: number | string } = { Country: key };
+    let series: { Country: string;[key: string]: number | string }[] = Array.from(nestedData, ([key, values]) => {
+      if (!values) return null;
+
+      let obj: { Country: string;[key: string]: number | string } = { Country: key };
+
+      let totalIncome = levels.reduce((sum, level) => {
+        const entry = values.find(d => d['Educational Level'] === level);
+        return sum + (entry ? +entry['Income'] || 0 : 0);
+      }, 0) || 1;
+
       levels.forEach(level => {
         const entry = values.find(d => d['Educational Level'] === level);
-        obj[level] = entry ? +entry['Income'] || 0 : 0;
+        obj[level] = entry ? (+entry['Income'] || 0) / totalIncome * 100 : 0;
       });
+
       return obj;
-    });
+
+      // levels.forEach(level => {
+      //   const entry = values.find(d => d['Educational Level'] === level);
+      //   obj[level] = entry ? +entry['Income'] || 0 : 0;
+      // });
+      // return obj;
+    }).filter(d => d !== null);
 
     let y = d3.scaleBand()
       .domain(series.map(d => d['Country'] as string))
       .range([0, this.height - this.margin.top - this.margin.bottom])
       .padding(0.2);
 
+    // let x = d3.scaleLinear()
+    //   .domain([0, d3.max(series, d => {
+    //     return levels.reduce((sum, level) => sum + (d[level] as number), 0);
+    //   }) as number])
+    //   .range([0, this.width - this.margin.left - this.margin.right]);
     let x = d3.scaleLinear()
-      .domain([0, d3.max(series, d => {
-        return levels.reduce((sum, level) => sum + (d[level] as number), 0);
-      }) as number])
+      .domain([0, 100])
       .range([0, this.width - this.margin.left - this.margin.right]);
+
 
     this.svg.selectAll('*').remove();
 
@@ -83,8 +102,8 @@ export class StackedbarComponent implements AfterViewInit {
     this.svg.append('text')
       .attr('text-anchor', 'middle')
       .attr('x', (this.width - this.margin.left - this.margin.right) / 2)
-      .attr('y', this.height - this.margin.bottom / 2)
-      .text('Income')
+      .attr('y', this.height - 150)
+      .text('Income Percentage(%)')
       .style('font-size', '14px');
 
     let tooltip = d3.select('body').append('div')
@@ -118,7 +137,7 @@ export class StackedbarComponent implements AfterViewInit {
       .attr('height', y.bandwidth())
       .on('mouseover', function (event: { pageX: number; pageY: number; }, d: { country: any; level: any; value: any; }) {
         tooltip.style('display', 'block')
-          .html(`Country: ${d.country}<br>${d.level}: ${d.value}`)
+          .html(`Country: ${d.country}<br>${d.level}: ${Number(d.value).toFixed(2)}%`)
           .style('left', (event.pageX + 10) + 'px')
           .style('top', (event.pageY - 10) + 'px');
       })
@@ -128,7 +147,7 @@ export class StackedbarComponent implements AfterViewInit {
 
     if (this.width > 600) {
       const legend = this.svg.append('g')
-        .attr('transform', `translate(${this.width - this.margin.right - 150}, 0)`);
+        .attr('transform', `translate(${this.width - this.margin.right - 150}, -80)`);
 
       levels.forEach((level, i) => {
         legend.append('rect')

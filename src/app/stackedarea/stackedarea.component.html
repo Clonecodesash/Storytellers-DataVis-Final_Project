@@ -1,7 +1,7 @@
 <div>
-  <label for="levelSelector">Select Education Level: </label>
-  <select id="levelSelector" (change)="updateChart($event)">
-    <option *ngFor="let level of educationLevels" [value]="level">{{ level }}</option>
+  <label for="countrySelector">Select Country: </label>
+  <select id="countrySelector" (change)="updateChart($event)">
+    <option *ngFor="let country of countries" [value]="country">{{ country }}</option>
   </select>
 </div>
 <div class="chart-container">

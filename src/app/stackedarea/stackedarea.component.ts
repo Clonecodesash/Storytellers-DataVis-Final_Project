@@ -10,18 +10,18 @@ import * as d3 from 'd3';
 })
 export class StackedareaComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
-  private width = window.innerWidth * 0.9;
+  private width = window.innerWidth * 0.8;
   private height = window.innerHeight * 0.8;
-  private margin = window.innerWidth > 600 ? { top: 50, right: 300, bottom: 50, left: 70 } : { top: 30, right: 50, bottom: 40, left: 50 };
-  public educationLevels: string[] = [];
+  private margin = window.innerWidth > 600 ? { top: 50, right: 50, bottom: 50, left: 70 } : { top: 30, right: 50, bottom: 40, left: 50 };
+  public countries: string[] = [];
   private fullData: any[] = [];
-  private selectedLevel: string = '';
+  private selectedCountry: string = '';
 
   ngAfterViewInit(): void {
     d3.csv('assets/data/stacked_area_chart/combined_employment_data.csv').then((data: any) => {
       this.fullData = data;
-      this.educationLevels = Array.from(new Set(data.map((d: any) => d['Education Level'])));
-      this.selectedLevel = this.educationLevels[0];
+      this.countries = Array.from(new Set(data.map((d: any) => d.Country)));
+      this.selectedCountry = this.countries[0];
       this.createStackedAreaChart();
       window.addEventListener('resize', () => this.resizeChart());
     });
@@ -31,28 +31,38 @@ export class StackedareaComponent implements AfterViewInit {
     const container = this.chartContainer.nativeElement;
     d3.select(container).selectAll('*').remove();
 
-    const data = this.fullData.filter(d => d['Education Level'] === this.selectedLevel);
-    const countries = Array.from(new Set(data.map(d => d.Country)));
+    const data = this.fullData.filter(d => d.Country === this.selectedCountry);
+    const educationLevels = Array.from(new Set(data.map(d => d['Education Level'])));
     const years = Array.from(new Set(data.map(d => +d.Year))).sort((a, b) => a - b);
 
-    const totalEmploymentByYear = d3.rollup(
+    const employmentByYear = d3.rollup(
       data,
-      v => d3.sum(v, d => +d['Employment Rate (%)']),
+      v => {
+        const employmentRates = Object.fromEntries(
+          educationLevels.map(level => [level, +v.find(d => d['Education Level'] === level)?.['Employment Rate (%)'] || 0])
+        );
+
+        const unemploymentRates = Object.fromEntries(
+          educationLevels.map(level => [level + " Unemployed", 100 - employmentRates[level]])
+        );
+
+        const unemployedTotal = Object.values(unemploymentRates).reduce((sum, value) => sum + value, 0);
+
+        return { ...employmentRates, "Unemployed": unemployedTotal };
+      },
       d => +d.Year
     );
 
-    const normalizedData = d3.rollups(
-      data,
-      v => {
-        const total = totalEmploymentByYear.get(+v[0].Year) || 1;
-        return Object.fromEntries(
-          countries.map(c => [c, ((+v.find(d => d.Country === c)?.['Employment Rate (%)'] || 0) / total) * 100])
-        );
-      },
-      d => +d.Year
-    ).map(([year, values]) => ({ Year: year, ...values }));
+    const normalizedData: { Year: number;[key: string]: number }[] = Array.from(employmentByYear, ([year, values]) => {
+      const total = Object.values(values).reduce((sum: number, value: unknown) => sum + (value as number), 0) || 1; // Avoid division by zero
+      return {
+        Year: year,
+        ...Object.fromEntries(Object.entries(values).map(([key, value]) => [key, (value as number / total) * 100]))
+      };
+    });
 
-    const stack = d3.stack().keys(countries);
+    const stackKeys = [...educationLevels, "Unemployed"];
+    const stack = d3.stack().keys(stackKeys);
     const series = stack(normalizedData);
 
     const x = d3.scaleLinear()
@@ -63,7 +73,9 @@ export class StackedareaComponent implements AfterViewInit {
       .domain([0, 100])
       .range([this.height - this.margin.top - this.margin.bottom, 0]);
 
-    const color = d3.scaleOrdinal(d3.schemeCategory10).domain(countries);
+    const color = d3.scaleOrdinal()
+      .domain(stackKeys)
+      .range([...d3.schemeCategory10.slice(0, educationLevels.length), "#888"]);
 
     const svg = d3.select(container)
       .append('svg')
@@ -94,7 +106,7 @@ export class StackedareaComponent implements AfterViewInit {
       .enter()
       .append('path')
       .attr('class', 'layer')
-      .attr('fill', d => color(d.key))
+      .attr('fill', d => color(d.key) as unknown as string)
       .attr('d', area as unknown as string)
       .attr('opacity', 0.8)
       .on("mouseover", (event, d) => {
@@ -105,13 +117,13 @@ export class StackedareaComponent implements AfterViewInit {
         const mouseY = event.pageY;
         const year = Math.round(x.invert(event.offsetX - this.margin.left));
 
-        const country = d.key;
+        const level = d.key;
         const yearData = normalizedData.find(entry => entry.Year === year);
-        const employmentRate = yearData ? yearData[country] : null;
+        const employmentRate = yearData ? yearData[level] : null;
 
-        if (employmentRate) {
+        if (employmentRate !== null) {
           tooltip
-            .html(`<strong>${country}</strong><br>Year: ${year}<br>Employment Share: ${employmentRate.toFixed(2)}%`)
+            .html(`<strong>${level}</strong><br>Year: ${year}<br>Employment Share: ${employmentRate.toFixed(2)}%`)
             .style("top", `${mouseY - 30}px`)
             .style("left", `${mouseX + 15}px`);
         }
@@ -138,33 +150,24 @@ export class StackedareaComponent implements AfterViewInit {
       .attr('y', -50)
       .attr('fill', 'black')
       .attr('text-anchor', 'middle')
-      .text('Employment Share (%)');
+      .text('Employment Rate Share (%)');
 
-    if (this.width > 600) {
-      const legend = svg.append('g')
-        .attr('transform', `translate(${this.width - 350}, 0)`)
-        .attr('class', 'legend-grid');
-
-      countries.forEach((country, i) => {
-        const row = legend.append('g')
-          .attr('transform', `translate(${(i % 2) * 120}, ${Math.floor(i / 2) * 20})`);
-
-        row.append('rect')
-          .attr('width', 15)
-          .attr('height', 15)
-          .attr('fill', color(country));
-
-        row.append('text')
-          .attr('x', 20)
-          .attr('y', 12)
-          .text(country)
-          .style('font-size', '12px');
-      });
-    }
+    svg.selectAll(".label")
+      .data(series)
+      .enter()
+      .append("text")
+      .attr("class", "label")
+      .attr("x", this.width / 1.1 - this.margin.left)
+      .attr("y", d => y((d[d.length - 1][1] + d[d.length - 1][0]) / 2))
+      .text(d => d.key)
+      .style("fill", d => (d.key === "Unemployed" ? "black" : "white"))
+      .style("font-size", "12px")
+      .style("text-anchor", "middle")
+      .style("font-weight", "bold");
   }
 
   public updateChart(event: any): void {
-    this.selectedLevel = event.target.value;
+    this.selectedCountry = event.target.value;
     this.createStackedAreaChart();
   }
 
