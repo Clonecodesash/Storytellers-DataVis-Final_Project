@@ -13,7 +13,7 @@ export class NetworkComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
   private width = window.innerWidth * 0.8;
   private height = window.innerHeight * 2;
-  private margin = { top: 40, right: 100, bottom: 50, left: -20 };
+  private margin = { top: 40, right: 100, bottom: 50, left: 10 };
   availableYears: number[] = [];
   private rawData: any[] = [];
   private selectedYear: number = 2017;
@@ -125,6 +125,8 @@ export class NetworkComponent implements AfterViewInit {
       .attr("opacity", 0.5)
 
       .on("mouseover", function (event, d) {
+        d3.select(this).attr("stroke", "#af455d").attr("opacity", 1);
+
         let flowText = `Flow: ${d.source.name} → ${d.target.name}`;
         let countryName = d.country || null;
 
@@ -145,7 +147,10 @@ export class NetworkComponent implements AfterViewInit {
           .style("top", (event.pageY - 10) + "px");
       })
 
-      .on("mouseout", () => tooltip.style("display", "none"));
+      .on("mouseout", function () {
+        d3.select(this).attr("stroke", "#666").attr("opacity", 0.5);
+        tooltip.style("display", "none");
+      });
 
     const node = svg.append("g")
       .selectAll("g")
@@ -162,13 +167,17 @@ export class NetworkComponent implements AfterViewInit {
       .attr("opacity", 0.8);
 
     node.append("text")
-      .attr("x", d => d.x1 + 10)
+      .attr("x", d => {
+        if (d.type === "income") return Math.min(d.x1 + 10, this.width - 70);
+        return d.x1 + 10;
+      })
       .attr("y", d => (d.y0 + d.y1) / 2)
       .attr("dy", "0.35em")
       .attr("text-anchor", "start")
       .text(d => d.name)
       .attr("fill", "#000")
-      .style("font-size", "12px");
+      .style("font-size", this.width < 600 ? "10px" : "12px");
+
 
     const tooltip = d3.select("body").append("div")
       .attr("class", "tooltip")
@@ -182,7 +191,7 @@ export class NetworkComponent implements AfterViewInit {
   }
 
   private resizeChart(): void {
-    this.width = window.innerWidth * 0.9;
+    this.width = window.innerWidth * 0.8;
     this.height = window.innerHeight * 2;
     this.createAlluvialChart();
   }

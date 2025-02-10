@@ -13,7 +13,7 @@ export class LineComponent implements AfterViewInit {
 
   private width = window.innerWidth * 0.8;
   private height = window.innerHeight * 0.6;
-  private margin = { top: 20, right: 200, bottom: 50, left: 60 };
+  private margin = window.innerWidth > 600 ? { top: 20, right: 200, bottom: 50, left: 60 } : { top: 20, right: 10, bottom: 50, left: 40 };
   private data: any[] = [];
   countries: string[] = [];
   private selectedCountry: string = '';
@@ -127,25 +127,27 @@ export class LineComponent implements AfterViewInit {
         .on('mouseout', () => tooltip.style('visibility', 'hidden'));
     });
 
-    const legend = svg.append('g')
-      .attr('transform', `translate(${this.width - 150}, 10)`);
+    if (this.width > 600) {
+      const legend = svg.append('g')
+        .attr('transform', `translate(${this.width - 150}, 10)`);
 
-    disaggregations.forEach((disagg, i) => {
-      const legendRow = legend.append('g')
-        .attr('transform', `translate(0, ${i * 20})`);
+      disaggregations.forEach((disagg, i) => {
+        const legendRow = legend.append('g')
+          .attr('transform', `translate(0, ${i * 20})`);
 
-      legendRow.append('rect')
-        .attr('width', 10)
-        .attr('height', 10)
-        .attr('fill', color(disagg)!);
+        legendRow.append('rect')
+          .attr('width', 10)
+          .attr('height', 10)
+          .attr('fill', color(disagg)!);
 
-      legendRow.append('text')
-        .attr('x', 15)
-        .attr('y', 10)
-        .text(disagg.split(',')[0])
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle');
-    });
+        legendRow.append('text')
+          .attr('x', 15)
+          .attr('y', 10)
+          .text(disagg.split(',')[0])
+          .style('font-size', '12px')
+          .attr('alignment-baseline', 'middle');
+      });
+    }
   }
 
   updateChart(event: Event) {

@@ -12,7 +12,7 @@ export class BarComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
   private width = window.innerWidth * 0.9;
   private height = window.innerHeight * 1.5;
-  private margin = { top: 120, right: 100, bottom: 70, left: 100 };
+  private margin = window.innerWidth > 600 ? { top: 120, right: 100, bottom: 70, left: 100 } : { top: 50, right: 10, bottom: 50, left: 60 };
   years: number[] = [2017, 2018, 2019, 2020, 2021, 2022, 2023];
   private selectedYear = 2017;
 

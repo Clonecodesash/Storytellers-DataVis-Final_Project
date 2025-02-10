@@ -41,36 +41,44 @@ export class ChoroplethComponent implements AfterViewInit {
       .attr('width', this.width)
       .attr('height', this.height);
 
-    const projection = d3
-      .geoMercator()
-      .scale(this.width / 4)
-      .translate([this.width / 2.5, this.height / 0.8]);
+    d3.json('assets/europe.geojson').then((geoData: any) => {
+      const projection = d3.geoMercator();
+      const path = d3.geoPath().projection(projection);
 
-    const path = d3.geoPath().projection(projection);
+      const bounds = d3.geoBounds(geoData);
+      const center = d3.geoCentroid(geoData);
+      const [[minLon, minLat], [maxLon, maxLat]] = bounds;
 
-    const colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, 100]);
+      const mapWidth = maxLon - minLon;
+      const mapHeight = maxLat - minLat;
+      const scale = Math.min(this.width / mapWidth, this.height / mapHeight) * 30;
 
-    const tooltip = d3
-      .select(container)
-      .append('div')
-      .attr('class', 'tooltip')
-      .style('position', 'absolute')
-      .style('opacity', 0);
+      projection
+        .scale(scale)
+        .center(center)
+        .translate([this.width / 2, this.height / 2]);
 
-    d3.csv('assets/data/map/combined_education_data.csv').then((data: any) => {
-      data.forEach((d: any) => {
-        d.Percentage = d.Percentage === ':' ? NaN : +d.Percentage;
-      });
+      const colorScale = d3.scaleSequential(d3.interpolateBlues).domain([0, 100]);
 
-      const filteredData = data.filter(
-        (d: any) => +d.Year === this.selectedYear && d.Type === 'Total'
-      );
+      const tooltip = d3
+        .select(container)
+        .append('div')
+        .attr('class', 'tooltip')
+        .style('position', 'absolute')
+        .style('opacity', 0);
 
-      d3.json('assets/europe.geojson').then((geoData: any) => {
+      d3.csv('assets/data/map/combined_education_data.csv').then((data: any) => {
+        data.forEach((d: any) => {
+          d.Percentage = d.Percentage === ':' ? NaN : +d.Percentage;
+        });
+
+        const filteredData = data.filter(
+          (d: any) => +d.Year === this.selectedYear && d.Type === 'Total'
+        );
+
         geoData.features.forEach((feature: any) => {
           const correctedCountryName = this.countryNameCorrections[feature.properties.NAME] || feature.properties.NAME;
           const countryData = filteredData.find((d: any) => d.Country === correctedCountryName);
-
           feature.properties.percentage = countryData ? countryData.Percentage : NaN;
         });
 
@@ -93,13 +101,13 @@ export class ChoroplethComponent implements AfterViewInit {
                 `<strong>${d.properties.NAME}</strong><br>
                 ${isNaN(d.properties.percentage) ? 'No Data' : `Value: ${d.properties.percentage}%`}`
               )
-              .style('left', event.pageX + 10 + 'px')
-              .style('top', event.pageY - 20 + 'px');
+              .style('left', Math.min(event.pageX + 10, window.innerWidth - 150) + 'px')
+              .style('top', Math.min(event.pageY - 20, window.innerHeight - 100) + 'px');
           })
           .on('mousemove', (event) => {
             tooltip
-              .style('left', event.pageX + 10 + 'px')
-              .style('top', event.pageY - 20 + 'px');
+              .style('left', Math.min(event.pageX + 10, window.innerWidth - 150) + 'px')
+              .style('top', Math.min(event.pageY - 20, window.innerHeight - 100) + 'px');
           })
           .on('mouseout', (event) => {
             d3.select(event.target).attr('stroke-width', 1);
@@ -108,8 +116,9 @@ export class ChoroplethComponent implements AfterViewInit {
 
         const legendWidth = 20;
         const legendHeight = this.height * 0.5;
-        const legendX = this.width - 150;
-        const legendY = this.height * 0.2;
+        const legendPadding = 20;
+        const legendX = this.width > 600 ? this.width - 150 : legendPadding;
+        const legendY = this.height > 500 ? this.height * 0.2 : legendPadding;
 
         const legendScale = d3.scaleLinear().domain([0, 100]).range([legendHeight, 0]);
 

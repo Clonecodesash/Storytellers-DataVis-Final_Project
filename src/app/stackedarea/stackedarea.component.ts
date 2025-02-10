@@ -12,7 +12,7 @@ export class StackedareaComponent implements AfterViewInit {
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
   private width = window.innerWidth * 0.9;
   private height = window.innerHeight * 0.8;
-  private margin = { top: 50, right: 300, bottom: 50, left: 70 };
+  private margin = window.innerWidth > 600 ? { top: 50, right: 300, bottom: 50, left: 70 } : { top: 30, right: 50, bottom: 40, left: 50 };
   public educationLevels: string[] = [];
   private fullData: any[] = [];
   private selectedLevel: string = '';
@@ -140,25 +140,27 @@ export class StackedareaComponent implements AfterViewInit {
       .attr('text-anchor', 'middle')
       .text('Employment Share (%)');
 
-    const legend = svg.append('g')
-      .attr('transform', `translate(${this.width - 350}, 0)`)
-      .attr('class', 'legend-grid');
+    if (this.width > 600) {
+      const legend = svg.append('g')
+        .attr('transform', `translate(${this.width - 350}, 0)`)
+        .attr('class', 'legend-grid');
 
-    countries.forEach((country, i) => {
-      const row = legend.append('g')
-        .attr('transform', `translate(${(i % 2) * 120}, ${Math.floor(i / 2) * 20})`);
+      countries.forEach((country, i) => {
+        const row = legend.append('g')
+          .attr('transform', `translate(${(i % 2) * 120}, ${Math.floor(i / 2) * 20})`);
 
-      row.append('rect')
-        .attr('width', 15)
-        .attr('height', 15)
-        .attr('fill', color(country));
+        row.append('rect')
+          .attr('width', 15)
+          .attr('height', 15)
+          .attr('fill', color(country));
 
-      row.append('text')
-        .attr('x', 20)
-        .attr('y', 12)
-        .text(country)
-        .style('font-size', '12px');
-    });
+        row.append('text')
+          .attr('x', 20)
+          .attr('y', 12)
+          .text(country)
+          .style('font-size', '12px');
+      });
+    }
   }
 
   public updateChart(event: any): void {

@@ -13,7 +13,7 @@ export class StackedbarComponent implements AfterViewInit {
 
   private width = window.innerWidth * 0.9;
   private height = window.innerHeight * 0.9;
-  private margin = { top: 40, right: 150, bottom: 50, left: 100 };
+  private margin = window.innerWidth > 600 ? { top: 40, right: 150, bottom: 50, left: 100 } : { top: 20, right: 10, bottom: 50, left: 60 };
   private svg!: any;
   private color = d3.scaleOrdinal(d3.schemeCategory10);
   private selectedYear = 2023;
@@ -87,14 +87,6 @@ export class StackedbarComponent implements AfterViewInit {
       .text('Income')
       .style('font-size', '14px');
 
-    this.svg.append('text')
-      .attr('text-anchor', 'middle')
-      .attr('transform', `rotate(-90)`)
-      .attr('x', -(this.height - this.margin.top - this.margin.bottom) / 2)
-      .attr('y', -this.margin.left + 20)
-      .text('Country')
-      .style('font-size', '14px');
-
     let tooltip = d3.select('body').append('div')
       .attr('class', 'tooltip')
       .style('position', 'absolute')
@@ -134,24 +126,26 @@ export class StackedbarComponent implements AfterViewInit {
         tooltip.style('display', 'none');
       });
 
-    const legend = this.svg.append('g')
-      .attr('transform', `translate(${this.width - this.margin.right - 150}, 0)`);
+    if (this.width > 600) {
+      const legend = this.svg.append('g')
+        .attr('transform', `translate(${this.width - this.margin.right - 150}, 0)`);
 
-    levels.forEach((level, i) => {
-      legend.append('rect')
-        .attr('x', 0)
-        .attr('y', i * 20)
-        .attr('width', 15)
-        .attr('height', 15)
-        .attr('fill', this.color(level));
+      levels.forEach((level, i) => {
+        legend.append('rect')
+          .attr('x', 0)
+          .attr('y', i * 20)
+          .attr('width', 15)
+          .attr('height', 15)
+          .attr('fill', this.color(level));
 
-      legend.append('text')
-        .attr('x', 20)
-        .attr('y', i * 20 + 12)
-        .text(level)
-        .style('font-size', '12px')
-        .attr('alignment-baseline', 'middle');
-    });
+        legend.append('text')
+          .attr('x', 20)
+          .attr('y', i * 20 + 12)
+          .text(level)
+          .style('font-size', '12px')
+          .attr('alignment-baseline', 'middle');
+      });
+    }
   }
 
   updateYear(event: Event): void {
