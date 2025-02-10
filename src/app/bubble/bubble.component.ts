@@ -11,7 +11,7 @@ import * as d3 from 'd3';
 export class BubbleComponent implements AfterViewInit {
 
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
-  private margin = window.innerWidth > 600 ? { top: 80, right: 80, bottom: 70, left: 80 } : { top: 20, right: 50, bottom: 50, left: 60 };
+  private margin = window.innerWidth > 600 ? { top: 80, right: 80, bottom: 80, left: 80 } : { top: 20, right: 50, bottom: 50, left: 60 };
   private width = window.innerWidth * 0.85;
   private height = window.innerHeight * 0.6;
   private svg!: any;
@@ -69,7 +69,7 @@ export class BubbleComponent implements AfterViewInit {
 
       this.svg.append('text')
         .attr('x', (this.width - this.margin.left - this.margin.right) / 2)
-        .attr('y', this.height - this.margin.bottom + 20)
+        .attr('y', window.innerWidth > 600 ? this.height - this.margin.bottom - 25: this.height - this.margin.bottom + 20)
         .style('text-anchor', 'middle')
         .style('font-size', '14px')
         .text('Employment Rate (%)');
