@@ -64,7 +64,6 @@ export class PieComponent implements AfterViewInit {
         disaggregation: d.Disaggregation,
       }));
 
-      // Extract unique years and countries
       this.years = Array.from(new Set(this.data.map((d) => d.year))).sort((a, b) => b - a);
       this.countries = Array.from(new Set(this.data.map((d) => d.country))).sort();
 
@@ -94,22 +93,34 @@ export class PieComponent implements AfterViewInit {
       return;
     }
 
-    const pie = d3.pie<any>().value((d) => d.value);
+    const total = filteredData.reduce((sum, d) => sum + d.value, 0);
+
+    if (total === 0) {
+      this.svg.selectAll('*').remove();
+      return;
+    }
+
+    const normalizedData = filteredData.map((d) => ({
+      ...d,
+      normalizedValue: (d.value / total) * 100,
+    }));
+
+    const pie = d3.pie<any>().value((d) => d.normalizedValue);
     const arc = d3.arc<any>().innerRadius(0).outerRadius(this.radius);
 
     this.svg.selectAll('*').remove();
 
-    const g = this.svg.selectAll('path').data(pie(filteredData)).enter().append('g');
+    const g = this.svg.selectAll('path').data(pie(normalizedData)).enter().append('g');
 
     g.append('path')
       .attr('d', arc)
       .attr('fill', (d: any, i: { toString: () => string; }) => this.color(i.toString()))
       .attr('stroke', 'white')
       .attr('stroke-width', '2px')
-      .on('mouseover', (event: { pageX: string; pageY: number; target: any; }, d: { data: { disaggregation: any; value: any; }; }) => {
+      .on('mouseover', (event: { pageX: string; pageY: number; target: any; }, d: { data: { disaggregation: string; value: number; normalizedValue: number; }; }) => {
         this.tooltip
           .style('display', 'block')
-          .html(`${d.data.value}`)
+          .html(`${d.data.normalizedValue.toFixed(1)}%`)
           .style('left', event.pageX + 'px')
           .style('top', event.pageY - 20 + 'px');
         d3.select(event.target).attr('opacity', 0.7);
@@ -122,13 +133,55 @@ export class PieComponent implements AfterViewInit {
         d3.select(event.target).attr('opacity', 1);
       });
 
-    // Add labels
     g.append('text')
       .attr('transform', (d: any) => `translate(${arc.centroid(d)})`)
       .attr('text-anchor', 'middle')
       .attr('font-size', '12px')
       .attr('fill', '#fff')
-      .text((d: { data: { disaggregation: any; }; }) => d.data.disaggregation.replace(', total', ''));
+      .text((d: { data: { disaggregation: string; }; }) => d.data.disaggregation.replace(', total', ''));
+    // const filteredData = this.data.filter(
+    //   (d) => d.year === this.selectedYear && d.country === this.selectedCountry
+    // );
+
+    // if (filteredData.length === 0) {
+    //   this.svg.selectAll('*').remove();
+    //   return;
+    // }
+
+    // const pie = d3.pie<any>().value((d) => d.value);
+    // const arc = d3.arc<any>().innerRadius(0).outerRadius(this.radius);
+
+    // this.svg.selectAll('*').remove();
+
+    // const g = this.svg.selectAll('path').data(pie(filteredData)).enter().append('g');
+
+    // g.append('path')
+    //   .attr('d', arc)
+    //   .attr('fill', (d: any, i: { toString: () => string; }) => this.color(i.toString()))
+    //   .attr('stroke', 'white')
+    //   .attr('stroke-width', '2px')
+    //   .on('mouseover', (event: { pageX: string; pageY: number; target: any; }, d: { data: { disaggregation: any; value: any; }; }) => {
+    //     this.tooltip
+    //       .style('display', 'block')
+    //       .html(`${d.data.value}%`)
+    //       .style('left', event.pageX + 'px')
+    //       .style('top', event.pageY - 20 + 'px');
+    //     d3.select(event.target).attr('opacity', 0.7);
+    //   })
+    //   .on('mousemove', (event: { pageX: string; pageY: number; }) => {
+    //     this.tooltip.style('left', event.pageX + 'px').style('top', event.pageY - 20 + 'px');
+    //   })
+    //   .on('mouseout', (event: { target: any; }) => {
+    //     this.tooltip.style('display', 'none');
+    //     d3.select(event.target).attr('opacity', 1);
+    //   });
+
+    // g.append('text')
+    //   .attr('transform', (d: any) => `translate(${arc.centroid(d)})`)
+    //   .attr('text-anchor', 'middle')
+    //   .attr('font-size', '12px')
+    //   .attr('fill', '#fff')
+    //   .text((d: { data: { disaggregation: any; }; }) => d.data.disaggregation.replace(', total', ''));
   }
 
   private resizeChart(): void {

@@ -11,7 +11,7 @@ import * as d3 from 'd3';
 export class BubbleComponent implements AfterViewInit {
 
   @ViewChild('chart', { static: true }) chartContainer!: ElementRef;
-  private margin = window.innerWidth > 600 ? { top: 40, right: 60, bottom: 70, left: 80 } : { top: 20, right: 50, bottom: 50, left: 60 };
+  private margin = window.innerWidth > 600 ? { top: 80, right: 80, bottom: 70, left: 80 } : { top: 20, right: 50, bottom: 50, left: 60 };
   private width = window.innerWidth * 0.85;
   private height = window.innerHeight * 0.6;
   private svg!: any;
@@ -113,7 +113,7 @@ export class BubbleComponent implements AfterViewInit {
           tooltip
             .style('visibility', 'visible')
             .html(
-              `<strong>${d.Country}</strong><br>Income: €${d.Income}<br>Employment Rate: ${d['Employment Rate (%)']}%<br>GDP: €${d['GDP(millions euros)']}M`
+              `<strong>${d.Country}</strong><br>Level: ${d['Educational Level']}<br>Income: €${d.Income}<br>Employment Rate: ${d['Employment Rate (%)']}%<br>GDP: €${d['GDP(millions euros)']}M`
             );
         })
         .on('mousemove', (event: { pageY: number; pageX: number; }) => {
@@ -126,6 +126,27 @@ export class BubbleComponent implements AfterViewInit {
 
       simulation.on('tick', () => {
         bubbles.attr('cx', (d: any) => d.x).attr('cy', (d: any) => d.y);
+      });
+
+
+      const educationLevels = Array.from(new Set(data.map((d) => d['Educational Level'])));
+
+      const legend = this.svg.append('g').attr('transform', `translate(${this.width - 800}, -50)`);
+
+      educationLevels.forEach((level, i) => {
+        legend
+          .append('circle')
+          .attr('cx', 0)
+          .attr('cy', i * 20)
+          .attr('r', 6)
+          .style('fill', color(level));
+
+        legend
+          .append('text')
+          .attr('x', 10)
+          .attr('y', i * 20 + 5)
+          .style('font-size', '12px')
+          .text(level);
       });
     });
   }
